@@ -1,13 +1,13 @@
 package FirstCourse;
 
 public class Employee {
-    String surname;
-    String name;
-    String fatherName;
-    int department;
+    private String surname;
+    private final String name;
+    private final String fatherName;
+    private int department;
     public float salary;
-    int id;
-    static int counter=1;
+    private final int id;
+    private static int counter = 1;
 
     public Employee(String surname, String name, String fatherName, int department, float salary) {
         this.surname = surname;
@@ -15,7 +15,7 @@ public class Employee {
         this.fatherName = fatherName;
         this.department = department;
         this.salary = salary;
-        this.id=counter++;
+        this.id = counter++;
     }
 
     public String getSurname() {
@@ -49,8 +49,9 @@ public class Employee {
     public void setSalary(float salary) {
         this.salary = salary;
     }
+
     @Override
     public String toString() {
-        return "id "+id+". Сотрудник: "+surname+ " " + name+" "+fatherName+". Отдел № "+department+" зарплата "+salary+" руб.";
+        return "id " + id + ". Сотрудник: " + surname + " " + name + " " + fatherName + ". Отдел № " + department + " зарплата " + salary + " руб.";
     }
 }
