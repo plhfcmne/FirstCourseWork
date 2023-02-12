@@ -1,39 +1,48 @@
 package FirstCourse;
 
 public class EmployeeUtility {
-    public static float sumTotal(Employee[] bookOfSalary) {
+    private static final int length = 10;
+    public static final Employee[] BOOKOFEMPLOYEES = new Employee[length];
+
+    public static float sumTotal() {
         float sum = 0;
-        for (int i = 0; i < bookOfSalary.length; i++) {
-            sum = sum + bookOfSalary[i].salary;
+        for (int i = 0; i < BOOKOFEMPLOYEES.length; i++) {
+            sum = sum + BOOKOFEMPLOYEES[i].salary;
         }
         return sum;
     }
 
-    public static int findMin(Employee[] bookOfSalary) {
+    public static Employee findMin() {
         int index = 0;
-        float min = bookOfSalary[index].salary;
-        for (int i = 1; i < bookOfSalary.length; i++) {
-            if (min > bookOfSalary[i].salary) {
-                min = bookOfSalary[i].salary;
+        float min = BOOKOFEMPLOYEES[index].salary;
+        for (int i = 1; i < BOOKOFEMPLOYEES.length; i++) {
+            if (min > BOOKOFEMPLOYEES[i].salary) {
+                min = BOOKOFEMPLOYEES[i].salary;
                 index = i;
             }
         }
-        return index;
+        return BOOKOFEMPLOYEES[index];
     }
 
-    public static int findMax(Employee[] bookOfSalary) {
+    public static Employee findMax() {
         int index = 0;
-        float max = bookOfSalary[index].salary;
-        for (int i = 1; i < bookOfSalary.length; i++) {
-            if (max < bookOfSalary[i].salary) {
-                max = bookOfSalary[i].salary;
+        float max = BOOKOFEMPLOYEES[index].salary;
+        for (int i = 1; i < BOOKOFEMPLOYEES.length; i++) {
+            if (max < BOOKOFEMPLOYEES[i].salary) {
+                max = BOOKOFEMPLOYEES[i].salary;
                 index = i;
             }
         }
-        return index;
+        return BOOKOFEMPLOYEES[index];
     }
 
-    public static float countAverage(Employee[] bookOfSalary) {
-        return sumTotal(bookOfSalary) / bookOfSalary.length;
+    public static float countAverage() {
+        return sumTotal() / BOOKOFEMPLOYEES.length;
+    }
+
+    public static void printAllFIO() {
+        for (int i = 0; i < BOOKOFEMPLOYEES.length; i++) {
+            System.out.println(BOOKOFEMPLOYEES[i].getSurname() + " " + BOOKOFEMPLOYEES[i].getName() + " " + BOOKOFEMPLOYEES[i].getFatherName());
+        }
     }
 }

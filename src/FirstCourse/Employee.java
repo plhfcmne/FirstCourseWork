@@ -1,13 +1,13 @@
 package FirstCourse;
 
 public class Employee {
-    String surname;
-    String name;
-    String fatherName;
-    int department;
+   private  String surname;
+    private final String name;
+    private final String fatherName;
+    private int department;
     public float salary;
-    int id;
-    static int counter = 1;
+    private final int id;
+    private static int counter = 1;
 
     public Employee(String surname, String name, String fatherName, int department, float salary) {
         this.surname = surname;
@@ -50,11 +50,6 @@ public class Employee {
         this.salary = salary;
     }
 
-    public static void printAllFIO(Employee[] bookOfEmployees) {
-        for (int i = 0; i < bookOfEmployees.length; i++) {
-            System.out.println(bookOfEmployees[i].getSurname() + " " + bookOfEmployees[i].getName() + " " + bookOfEmployees[i].fatherName);
-        }
-    }
 
     @Override
     public String toString() {
