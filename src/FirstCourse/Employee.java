@@ -1,7 +1,7 @@
 package FirstCourse;
 
 public class Employee {
-   private  String surname;
+    private String surname;
     private final String name;
     private final String fatherName;
     private int department;
@@ -49,7 +49,6 @@ public class Employee {
     public void setSalary(float salary) {
         this.salary = salary;
     }
-
 
     @Override
     public String toString() {
